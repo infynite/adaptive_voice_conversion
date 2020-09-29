@@ -64,6 +64,7 @@ You can use ```inference.py``` to inference.
 - **-s**: the path of source file (.wav).
 - **-t**: the path of target file (.wav).
 - **-o**: the path of output converted file (.wav).
+- **-r**: the path of output raw file (.mel).
 
 # Reference
 Please cite our paper if you find this repository useful.
