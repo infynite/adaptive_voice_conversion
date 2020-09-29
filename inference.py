@@ -89,6 +89,8 @@ class Inferencer(object):
         src_mel = torch.from_numpy(self.normalize(src_mel)).cuda()
         tar_mel = torch.from_numpy(self.normalize(tar_mel)).cuda()
         conv_wav, conv_mel = self.inference_one_utterance(src_mel, tar_mel)
+        if self.args.routput:
+            torch.save(conv_wav, self.args.routput)
         self.write_wav_to_file(conv_wav, self.args.output)
         return
 
@@ -100,6 +102,7 @@ if __name__ == '__main__':
     parser.add_argument('-source', '-s', help='source wav path')
     parser.add_argument('-target', '-t', help='target wav path')
     parser.add_argument('-output', '-o', help='output wav path')
+    parser.add_argument('-routput', '-o', help='raw mel output path')
     parser.add_argument('-sample_rate', '-sr', help='sample rate', default=24000, type=int)
     args = parser.parse_args()
     # load config file 
