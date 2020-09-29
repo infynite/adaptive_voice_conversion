@@ -90,7 +90,7 @@ class Inferencer(object):
         tar_mel = torch.from_numpy(self.normalize(tar_mel)).cuda()
         conv_wav, conv_mel = self.inference_one_utterance(src_mel, tar_mel)
         if self.args.routput:
-            torch.save(conv_wav, self.args.routput)
+            torch.save(conv_mel, self.args.routput)
         self.write_wav_to_file(conv_wav, self.args.output)
         return
 
