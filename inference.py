@@ -102,7 +102,7 @@ if __name__ == '__main__':
     parser.add_argument('-source', '-s', help='source wav path')
     parser.add_argument('-target', '-t', help='target wav path')
     parser.add_argument('-output', '-o', help='output wav path')
-    parser.add_argument('-routput', '-o', help='raw mel output path')
+    parser.add_argument('-routput', '-r', help='raw mel output path')
     parser.add_argument('-sample_rate', '-sr', help='sample rate', default=24000, type=int)
     args = parser.parse_args()
     # load config file 
